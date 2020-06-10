@@ -29,4 +29,3 @@ colorscheme sublimemonokai
 "mappings
 
 map <C-n> :NERDTreeToggle<CR>
-map <Leader> <Plug>(easymotion-prefix)
