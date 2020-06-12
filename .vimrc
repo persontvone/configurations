@@ -5,6 +5,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
@@ -18,7 +19,10 @@ call plug#end()
 set path+=/usr/include/c++/10.1.0
 syntax on
 let g:mapleader=','
+set laststatus=2
 vnoremap <C-c> "+y
+set noswapfile
+set wildmenu
 map <C-v> "+P
 set background=dark
 set nocompatible
@@ -32,12 +36,23 @@ set scrolloff=8
 set tw=0 wm=0
 set hlsearch
 set incsearch
-" bash-like TAB completion
-set wildmode=longest,list
 
-" Navigate through completion variants using ← and →
-set wildmenu
+" enable Normal mode keys in ru layout
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
+" indent-guides
+"let g:indent_guides_auto_colors = 1
+hi IndentGuidesOdd  guibg=#3B3B3B ctermbg=235
+hi IndentGuidesEven guibg=#343434 ctermbg=236
+let g:indent_guides_space_guides = 1
+let g:indent_guides_enable_on_vim_startup = 1
+
+highlight ExtraWhitespace ctermbg=red guibg=red
 " cscope
+set cscopeverbose
+set cscopequickfix=g-,s-,c-,d-,i-,t-,e-,a-
+" enable using scope as tags
+set cscopetag
 colorscheme sublimemonokai
 " Syntastic
 set statusline+=%f
