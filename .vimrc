@@ -19,50 +19,87 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'mileszs/ack.vim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
-"Plug 'prabirshres/vim-lsp'
-"Plug 'prabirshres/vim-lsp'
 Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-vim-lsp'
 call plug#end()
+
+
 syntax on
+
+"remap leader button
 let g:mapleader=','
+
+"display the status line always
 set laststatus=2
-vnoremap <C-c> "+y
+
+"No default cache file
 set noswapfile
-set wildmenu
+
+"Copy selected symbols into OS buffer
+vnoremap <C-c> "+y
+"Paster from OS buffer.
 map <C-v> "+P
+
+"change background color
 set background=dark
+
+"no compatibe with VI
 set nocompatible
-syntax on
+
+"enable loading the plugin files for specific file types
 filetype plugin indent on
+
+"show line number
 set number
-" indentation
-"set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
+set history=50 "keep 50 lines of command line history
+
+set showcmd "display incomplete commands
+
+set encoding=utf-8
+
 set tabstop=2 shiftwidth=2 noexpandtab smarttab
 set scrolloff=8
 set tw=0 wm=0
+
 set hlsearch
 set incsearch
+"allow mouse
+set mouse=a
+"Show cursor always
 set cursorline
 set ruler
+
+"Auto indentation
 set autoindent
+
+"We can undo file changes after save
 set undofile
+"Cache dir
 set undodir=/tmp
+
+"Correct backspace behavior
 set backspace=indent,eol,start
-set clipboard=unnamed
-set diffopt+=vertical
+
+set wildmenu
+set wildmode=list:longest
+
+
+
+let g:airline_powerline_fonts=0
+" No extra space after opening and before closing symbol
 let g:AutoPairsMultilineClose=0
 let g:AutoPairsMapSpace=0
+let g:AutoPairsFlyMode=0
 " handle long lines correctly
 set wrap
 set textwidth=110
 set colorcolumn=110
 set formatoptions=qrn1
 
-
+"type tt to write current data and time
 nnoremap tt "=strftime("%F %T%z")<CR>p
 
 " fsf - IN VISUAL MODE Ctrl+F open list of files in current directory
@@ -73,41 +110,36 @@ inoremap <C-f> <Esc><Esc>:BLines!<CR>
 if executable('rg')
   let g:ackprg = '/usr/bin/rg --vimgrep --smart-case'
   vnoremap <leader>r :'<,'>Ack!<cr>
-  nnoremap <leader>r :Ack! 
+  nnoremap <leader>r :Ack!
 endif
-
+"show directory tree
 nnoremap <leader>a :NERDTreeToggle<cr>
+
+"cancel search highlights
 nnoremap <leader><space> :noh<cr>
+
+"git status
 nnoremap <leader>w :Gstatus<cr>
 " enable Normal mode keys in ru layout
-set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
+"colorscheme
 let g:molokai_original = 1
 colorscheme molokai
 
-let g:AutoPairsMultilineClose=0
-" No extra space after opening and before closing symbol
-let g:AutoPairsMapSpace=0
 " Display hidden charaters
 set list
 set listchars=tab:\ \ ,trail:·,eol:¬,nbsp:_
 
+
+
+nnoremap <Left> :tabprevious<CR>
+nnoremap <Right> :tabnext<CR>
+
 "Strip all trailing whitespace
 nnoremap <leader>f :StripWhitespace<cr>
-set mouse=a
 highlight ExtraWhitespace ctermbg=red guibg=red
-" Syntastic
-set statusline+=%f
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_loc_list_height = 2
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_warning_symbol = "⚠"
 
 set autowrite
 set autoread
@@ -133,13 +165,13 @@ if executable('clangd')
     augroup end
 endif
 
-
+"Show documentation
 nnoremap <leader>e :LspHover<cr>
 nnoremap <leader>d :LspDefinition<cr>
 
 
-" set efm=
-" set efm+=%f:%l:%c:\ %trror:%m
-" set efm+=%f:%l:%c:\ %tarning:%m
-" set efm+=%f:%l:\ %trror:%m
-" set efm+=%f:%l:\ %tarning:%m
+set efm=
+set efm+=%f:%l:%c:\ %trror:%m
+set efm+=%f:%l:%c:\ %tarning:%m
+set efm+=%f:%l:\ %trror:%m
+set efm+=%f:%l:\ %tarning:%m
