@@ -108,9 +108,9 @@ map <C-f> <Esc><Esc>:Files!<CR>
 " ctrl + f)
 inoremap <C-f> <Esc><Esc>:BLines!<CR>
 if executable('rg')
-  let g:ackprg = '/usr/bin/rg --vimgrep --smart-case'
-  vnoremap <leader>r :'<,'>Ack!<cr>
-  nnoremap <leader>r :Ack!
+  let g:ackprg = '/usr/bin/rg --vimgrep --smart-case --no-heading'
+  vnoremap <leader>r :'<,'>Ack! <cr>
+  nnoremap <leader>r :Ack! 
 endif
 "show directory tree
 nnoremap <leader>a :NERDTreeToggle<cr>
@@ -130,10 +130,6 @@ colorscheme molokai
 set list
 set listchars=tab:\ \ ,trail:·,eol:¬,nbsp:_
 
-
-
-nnoremap <Left> :tabprevious<CR>
-nnoremap <Right> :tabnext<CR>
 
 "Strip all trailing whitespace
 nnoremap <leader>f :StripWhitespace<cr>
@@ -166,8 +162,19 @@ if executable('clangd')
 endif
 
 "Show documentation
-nnoremap <leader>e :LspHover<cr>
+nnoremap <leader>h :LspHover<cr>
 nnoremap <leader>d :LspDefinition<cr>
+
+
+
+"Highlight references to the symbol under the cursor
+let g:lsp_highlight_references_enabled = 1
+
+"highlight references of symbol under cursor
+highlight lspReference ctermfg=red guifg=red ctermbg=cyan guibg=cyan
+
+"change error icon. 
+let g:lsp_signs_error = {'text': '✗'}
 
 
 set efm=
