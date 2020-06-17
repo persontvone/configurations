@@ -23,6 +23,7 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-vim-lsp'
+Plug 'bfrg/vim-cpp-modern'
 call plug#end()
 
 
@@ -39,11 +40,11 @@ set noswapfile
 
 "Copy selected symbols into OS buffer
 vnoremap <C-c> "+y
-"Paster from OS buffer.
+"Paste from OS buffer.
 map <C-v> "+P
-
 "change background color
 set background=dark
+
 
 "no compatibe with VI
 set nocompatible
@@ -109,8 +110,8 @@ map <C-f> <Esc><Esc>:Files!<CR>
 inoremap <C-f> <Esc><Esc>:BLines!<CR>
 if executable('rg')
   let g:ackprg = '/usr/bin/rg --vimgrep --smart-case --no-heading'
-  vnoremap <leader>r :'<,'>Ack! <cr>
-  nnoremap <leader>r :Ack! 
+  vnoremap <leader>f :'<,'>Ack! <cr>
+  nnoremap <leader>f :Ack! 
 endif
 "show directory tree
 nnoremap <leader>a :NERDTreeToggle<cr>
@@ -132,7 +133,7 @@ set listchars=tab:\ \ ,trail:·,eol:¬,nbsp:_
 
 
 "Strip all trailing whitespace
-nnoremap <leader>f :StripWhitespace<cr>
+nnoremap <leader>sw :StripWhitespace<cr>
 highlight ExtraWhitespace ctermbg=red guibg=red
 set statusline+=%#warningmsg#
 set statusline+=%*
@@ -164,9 +165,10 @@ endif
 "Show documentation
 nnoremap <leader>h :LspHover<cr>
 nnoremap <leader>d :LspDefinition<cr>
-
-
-
+nnoremap <leader>r :LspReferences<cr>
+nnoremap <leader>e :LspNextError<cr>
+nnoremap <leader>E :LspPreviousError<cr>
+nnoremap <F2> :LspRename<cr>
 "Highlight references to the symbol under the cursor
 let g:lsp_highlight_references_enabled = 1
 
@@ -176,7 +178,19 @@ highlight lspReference ctermfg=red guifg=red ctermbg=cyan guibg=cyan
 "change error icon. 
 let g:lsp_signs_error = {'text': '✗'}
 
+" Toggle between column widths
+nnoremap <leader><leader> :call ToggleQuickfix()<cr>
+function! ToggleQuickfix()
+  for buffer in tabpagebuflist()
+    if bufname(buffer) == ''
+      " then it should be the quickfix window
+      cclose
+      return
+    endif
+  endfor
 
+  copen
+endfunction
 set efm=
 set efm+=%f:%l:%c:\ %trror:%m
 set efm+=%f:%l:%c:\ %tarning:%m
