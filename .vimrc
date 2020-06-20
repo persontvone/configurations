@@ -23,6 +23,7 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-vim-lsp'
 Plug 'bfrg/vim-cpp-modern'
+Plug 'powerman/vim-plugin-viewdoc'
 call plug#end()
 
 
@@ -160,7 +161,6 @@ if executable('clangd')
         autocmd FileType objcpp setlocal omnifunc=lsp#complete
     augroup end
 endif
-
 "Show documentation
 nnoremap <leader>h :LspHover<cr>
 nnoremap <leader>d :LspDefinition<cr>
@@ -195,3 +195,6 @@ set efm+=%f:%l:%c:\ %trror:%m
 set efm+=%f:%l:%c:\ %tarning:%m
 set efm+=%f:%l:\ %trror:%m
 set efm+=%f:%l:\ %tarning:%m
+
+:set virtualedit=onemore
+:nnoremap $ g$
