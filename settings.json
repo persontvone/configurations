@@ -2,7 +2,7 @@
 	"terminal.integrated.shell.windows" : "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
 	"terminal.integrated.shell.windows" : "C:/Program Files/Git/git-cmd.exe", 
     "workbench.colorTheme": "Default Dark+",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -1,
     "powershell.promptToUpdatePowerShell": false,
     "vim.replaceWithRegister" : true,
     "vim.easymotion": true,
@@ -11,13 +11,7 @@
 	  "vim.useCtrlKeys": true,
 	  "vim.hlsearch": true,
 	  "vim.leader": ",",
-	  "vim.virtualedit": "onemore",
-	  
 	  "vim.normalModeKeyBindingsNonRecursive": [
-	  	{
-	      "before": ["<$>"],
-	      "after": [":g$"]
-    	},
 	    {
 	      "before": ["<leader>", "space"],
 	      "commands": [":nohl"]
@@ -38,4 +32,7 @@
 "editor.mouseWheelZoom": true,
 "workbench.activityBar.visible": true,
 "editor.suggest.showStatusBar": true,
+"cmake.configureOnOpen": true,
+"explorer.compactFolders": false,
+"files.autoSave": "afterDelay"
 }
