@@ -1,38 +1,58 @@
 {
-	"terminal.integrated.shell.windows" : "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-	"terminal.integrated.shell.windows" : "C:/Program Files/Git/git-cmd.exe", 
-    "workbench.colorTheme": "Default Dark+",
-    "window.zoomLevel": -1,
-    "powershell.promptToUpdatePowerShell": false,
-    "vim.replaceWithRegister" : true,
-    "vim.easymotion": true,
-	  "vim.incsearch": true,
-	  "vim.useSystemClipboard": true,
-	  "vim.useCtrlKeys": true,
-	  "vim.hlsearch": true,
-	  "vim.leader": ",",
-	  "vim.normalModeKeyBindingsNonRecursive": [
-	    {
-	      "before": ["<leader>", "space"],
-	      "commands": [":nohl"]
-	    }
-	  ],
-
-	  "vim.handleKeys": {
-    "<C-c>": false,
-    "<C-v>": false,
-    "<C-h>": false,
-    "<C-j>": false,
-    "<C-k>": false,
-    "<C-l>": false,
-},
-"editor.lineNumbers": "relative",
-"cmake.buildDirectory": "${workspaceRoot}/build-vscode",
-"workbench.iconTheme": "vs-seti",
-"editor.mouseWheelZoom": true,
-"workbench.activityBar.visible": true,
-"editor.suggest.showStatusBar": true,
-"cmake.configureOnOpen": true,
-"explorer.compactFolders": false,
-"files.autoSave": "afterDelay"
+	"terminal.integrated.shell.windows": "C:/Program Files/PowerShell/7/pwsh.exe",
+	"window.zoomLevel": 1,
+	"powershell.promptToUpdatePowerShell": false,
+	"vim.replaceWithRegister": true,
+	// "vim.easymotion": true,
+	"vim.incsearch": true,
+	// "vim.useSystemClipboard": true,
+	"vim.useCtrlKeys": true,
+	"vim.hlsearch": true,
+	"vim.leader": ",",
+	// For visual mode
+	"vim.visualModeKeyBindings": [
+		{
+			"before": [ "<C-c>" ],
+			"after": [ "\"", "+", "y" ] },
+		{
+			"before": [ "<C-v>" ],
+			"after": [ "\"", "+", "p" ]
+		 }
+	],
+	// For normal mode
+	"vim.normalModeKeyBindings": [
+		{
+			"before": [ "<C-c>" ], 
+			"after": [ "\"", "+", "y" ]
+		},
+		{
+			"before": [ "<C-v>" ],
+			"after": [ "\"", "+", "p" ]
+		}
+	],
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": [ "<leader>", "space" ],
+			"commands": [ ":nohl" ]
+		}
+	],
+	"vim.handleKeys": {
+		"<C-h>": false,
+		"<C-j>": false,
+		"<C-k>": false,
+		"<C-l>": false,
+		"<C-w>": false,
+	},
+	"editor.lineNumbers": "relative",
+	"cmake.buildDirectory": "${workspaceRoot}/build-vscode",
+	"workbench.iconTheme": "vs-seti",
+	"editor.mouseWheelZoom": true,
+	"workbench.activityBar.visible": true,
+	"editor.suggest.showStatusBar": true,
+	// "cmake.configureOnOpen": true,
+	"explorer.compactFolders": false,
+	"files.autoSave": "afterDelay",
+	"workbench.startupEditor": "newUntitledFile",
+	"cmake.configureOnEdit": false,
+	"cmake.configureOnOpen": true,
 }
