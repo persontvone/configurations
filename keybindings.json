@@ -6,11 +6,6 @@
         "when": "terminalFocus && terminalProcessSupported"
     },
     {
-        "key": "ctrl+shift+v",
-        "command": "-workbench.action.terminal.paste",
-        "when": "terminalFocus && terminalProcessSupported"
-    },
-    {
         "key": "alt+q",
         "command": "explorer.newFile"
     },
@@ -21,14 +16,6 @@
     {
         "key": "alt+t",
         "command": "workbench.action.terminal.focus"
-    },
-    {
-        "key": "alt+o",
-        "command": "workbench.panel.output.focus"
-    },
-    {
-        "key": "alt+e",
-        "command": "workbench.panel.markers.view.focus"
     },
     {
         "key": "ctrl+shift+e",
@@ -55,11 +42,6 @@
     {
         "key": "alt+d",
         "command": "workbench.debug.action.toggleRepl",
-        "when": "debuggersAvailable"
-    },
-    {
-        "key": "ctrl+shift+y",
-        "command": "-workbench.debug.action.toggleRepl",
         "when": "debuggersAvailable"
     },
     {
@@ -119,12 +101,12 @@
         "when": "listFocus && !inputFocus"
     },
     { 
-        "key": "ctrl+k",
+        "key": "k",
         "command": "list.focusUp",
         "when": "listFocus && !inputFocus"
     },
     { 
-        "key": "ctrl+j",
+        "key": "j",
         "command": "list.focusDown",
         "when": "listFocus && !inputFocus"
     },
@@ -164,9 +146,8 @@
         "when": "inQuickOpen"
     },
     {
-        "key": ", t",
+        "key": "alt+`",
         "command": "workbench.action.toggleSidebarVisibility",
-        "when": "!editorTextFocus"
     },
     {
         "key": "ctrl+shift+/",
@@ -185,5 +166,119 @@
     {
         "key": "ctrl+k ctrl+\\",
         "command": "-workbench.action.splitEditorOrthogonal"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+f4",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "editor.action.formatSelection",
+        "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+k ctrl+f",
+        "command": "-editor.action.formatSelection",
+        "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+t",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "alt+o",
+        "command": "workbench.action.output.toggleOutput"
+    },
+    {
+        "key": "ctrl+shift+u",
+        "command": "-workbench.action.output.toggleOutput"
+    },
+    {
+        "key": "alt+p",
+        "command": "workbench.actions.view.problems"
+    },
+    {
+        "key": "ctrl+shift+m",
+        "command": "-workbench.actions.view.problems"
+    },
+    {
+        "key": ", l",
+        "command": "cursorEnd",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "end",
+        "command": "-cursorEnd",
+        "when": "textInputFocus"
+    },
+    {
+        "key": ", h",
+        "command": "cursorHome",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "home",
+        "command": "-cursorHome",
+        "when": "textInputFocus"
+    },
+    {
+        "key": ", v",
+        "command": "workbench.debug.action.focusVariablesView"
+    },
+    {
+        "key": ", w",
+        "command": "workbench.debug.action.focusWatchView"
+    },
+    {
+        "key": "f8",
+        "command": "-editor.action.marker.nextInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+r",
+        "command": "editor.action.goToReferences",
+        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "shift+f12",
+        "command": "-editor.action.goToReferences",
+        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "alt+f8",
+        "command": "-editor.action.marker.next",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+alt+f8",
+        "command": "-editor.action.marker.prev",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+p",
+        "command": "-keybindings.editor.toggleSortByPrecedence",
+        "when": "inKeybindings"
+    },
+    {
+        "key": "alt+p",
+        "command": "-togglePreserveCase",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+p",
+        "command": "-toggleSearchPreserveCase",
+        "when": "searchViewletFocus"
+    },
+    {
+        "key": "alt+e",
+        "command": "editor.action.marker.next"
+    },
+    {
+        "key": "shift+alt+e",
+        "command": "editor.action.marker.prev"
     }
 ]
