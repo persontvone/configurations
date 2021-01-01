@@ -206,34 +206,6 @@
         "command": "-workbench.actions.view.problems"
     },
     {
-        "key": ", l",
-        "command": "cursorEnd",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "end",
-        "command": "-cursorEnd",
-        "when": "textInputFocus"
-    },
-    {
-        "key": ", h",
-        "command": "cursorHome",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "home",
-        "command": "-cursorHome",
-        "when": "textInputFocus"
-    },
-    {
-        "key": ", v",
-        "command": "workbench.debug.action.focusVariablesView"
-    },
-    {
-        "key": ", w",
-        "command": "workbench.debug.action.focusWatchView"
-    },
-    {
         "key": "f8",
         "command": "-editor.action.marker.nextInFiles",
         "when": "editorFocus"
@@ -280,5 +252,9 @@
     {
         "key": "shift+alt+e",
         "command": "editor.action.marker.prev"
+    },
+    {
+        "key": "ctrl+shift+m",
+        "command": "editor.action.inspectTMScopes"
     }
 ]
