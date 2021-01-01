@@ -55,4 +55,73 @@
 	"workbench.startupEditor": "newUntitledFile",
 	"cmake.configureOnEdit": false,
 	"cmake.configureOnOpen": true,
+	// "tokenColors": [
+ //    {
+ //      "scope": "meta.preprocessor",
+ //      "settings": {
+ //        "foreground": "#fe8019"
+ //      }
+ //    },
+ //    {
+ //      "scope": "meta.preprocessor.string",
+ //      "settings": {
+ //        "foreground": "#b8bb26"
+ //      }
+ //    },
+ //    {
+ //      "scope": "meta.preprocessor.numeric",
+ //      "settings": {
+ //        "foreground": "#b8bb26"
+ //      }
+ //    }],
+
+	"editor.tokenColorCustomizations": 
+	{
+        "[Default Dark+]": {
+
+            "textMateRules": [
+                {
+                    "scope": "variable.other.enummember",
+                    "settings":
+                     {
+                        "foreground": "#adde9c"
+                     }
+                },
+				{
+                    "scope": "entity.name.function.preprocessor",
+                    "settings": {
+                        "foreground": "#c586c0"
+                    },
+             	},
+             	{
+                    "scope": "entity.name.define.preprocessor",
+                    "settings": {
+                        "foreground": "#b8d7a3"
+                    },
+             	},
+             	{
+                    "scope": "keyword.control.directive",
+                    "settings": {
+                        "foreground": "#969798"
+                    },
+             	},
+             	{
+                    "scope": "meta.preprocessor.macro",
+                    "settings": {
+                        "foreground": "#FFFFFF"
+                    },
+             	},
+             	{
+                    "scope": "variable.parameter.preprocessor",
+                    "settings": {
+                        "foreground": "#FFFFFF"
+                    },
+             	}
+             	
+             	
+            ]
+        },
+        "comments" : "#6e6e6e"
+    },
+	"workbench.colorTheme": "Default Dark+"
 }
